@@ -750,8 +750,30 @@ section + hr {
     border-radius: 17px;
     transition-duration: .3s;
     opacity: .8;
+    position: relative;
+    overflow: hidden;
 }
 
+.portfolio .container-images .box-of-img  p.desc-message::first-letter {
+    color: red;
+    font-size: 19px;
+}
+.portfolio .container-images .box-of-img  p.desc-message {
+    position: absolute;
+    text-align: center;
+    top: 105% ;
+    left: 10%;
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--transparent-main-color);
+    color: white;
+    transition-duration: 1s;
+    border-radius: 5px;
+}
+.portfolio .container-images .box-of-img:hover p.desc-message{
+    left: 10%;
+    top:65% ;
+}
 
 .portfolio .container-images .box-of-img img:first-child{
     height: 80%;
@@ -791,8 +813,6 @@ section + hr {
     .portfolio .container-images .box-of-img  {
         width: 22%;
     }
+    
 }
-
-
-
 /* End Portfolio */
