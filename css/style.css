@@ -75,6 +75,7 @@ header {
 }
 .back-to-top {
     position: fixed;
+    z-index: 1000;
     bottom: 0;
     right: 0;
     color: #19c9fac7;
@@ -410,6 +411,8 @@ header .container nav .form i:hover {
     margin: 0 auto;
     color: #777;
 }
+
+
 /* Settings of Responsive Component */
 @media (max-width:767px) {
     .special-heading {
@@ -471,7 +474,12 @@ section + hr {
         width: 45%;
     }
 }
-
+/* Settings of any span have class his name is red-color */
+span.red-color{
+    color: red;
+    font-weight: bolder;
+    font-size: 18px;
+}
 /* Ending of First Component  */
 
 
@@ -816,3 +824,70 @@ section + hr {
     
 }
 /* End Portfolio */
+
+/* Start Video Section  */
+.video-section{
+    padding: 70px 0;
+}
+.video-title{
+    position: relative;
+}
+.video-title::before {
+    content: '';
+    position: absolute;
+    bottom: -35px;
+    height: 2px;
+    width: 150%;
+    background-color: var(--main-color);
+    left: -25%;
+}
+.video-section .video-div {
+    position: relative;
+}
+.video-section .video-div video {
+    width: 90%;
+    height: 100%;
+    border-radius: 20px;
+    margin: 0 5%;
+
+    transition-duration: .3s;
+}
+.video-section .video-div video:hover{
+    box-shadow: var(--main-color) 0px 0px 9px 4px;
+    box-shadow: var(--main-color) 0px 0px 14px 6px;
+    scale: 1.02;
+}
+.video-section .video-div video + p {
+    position: absolute;
+    top: 50%;
+    width: 90%;
+    text-align: center;
+    font-size: 4vw;
+    color: white;
+    background-color: var(--transparent-main-color);
+    height: 10%;
+    border-radius: 15px;
+    left: 5%;
+}
+.video-section .video-div video + p::first-letter{
+    color: red;
+    font-size: 5.5vw;
+}
+.video-section .video-div video + p + button {
+    width: 17%;
+    position: relative;
+    left: 43%;
+    border: none;
+    margin: 10px 0;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 0;
+    text-align: center;
+    transition-duration: .3s;
+}
+.video-section .video-div video + p + button:hover{
+    background-color: red;
+    box-shadow: 0px 0px 2px 2px red ;
+} 
+/* End Video Section  */
