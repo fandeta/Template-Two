@@ -889,5 +889,6 @@ span.red-color{
 .video-section .video-div video + p + button:hover{
     background-color: red;
     box-shadow: 0px 0px 2px 2px red ;
+    box-shadow: 0px 0px 2px 2px red ;
 } 
 /* End Video Section  */
