@@ -308,7 +308,12 @@ header .container nav .form i:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 5;
     color: #ddd;
+    transition-duration: .3s;
+}
+.landing .change-background:hover{
+    color: red;
 }
 
 @media (max-width:767px) {
@@ -326,7 +331,7 @@ header .container nav .form i:hover {
 }
 .landing .div-of-ul {
     position: relative;
-    width: 50%;
+    width: 50vw;
     height: 100vh;
 }
 .landing .bullets {
@@ -367,6 +372,9 @@ header .container nav .form i:hover {
 .special-heading {
     text-align: center;
     margin: 100px auto;
+}
+.special-heading.heading-portfolio {
+    margin-bottom: 60px;
 }
 
 .special-heading h2 {
@@ -736,8 +744,11 @@ span.red-color{
 .portfolio .filters-images .shuffle li:not(:last-child){
     margin-right: 7px;
 }
-.portfolio .filters-images .shuffle li:hover,
-.portfolio .filters-images .shuffle li.active{
+.portfolio .filters-images .shuffle li:hover {
+    background-color: var(--main-color);
+    transform: scale(1.08) translateY(-5px);
+}
+.portfolio .filters-images .shuffle li.active {
     background-color: var(--main-color);
     transform: scale(1.08);
 }
@@ -793,7 +804,7 @@ span.red-color{
     opacity: .7;
 }
 .portfolio .container-images .box-of-img:hover {
-    transform: scale(1.09);
+    transform: scale(1.09) ;
     opacity: 1;
 }
 .portfolio .container-images .box-of-img:hover img{
@@ -878,7 +889,7 @@ span.red-color{
     position: relative;
     left: 43%;
     border: none;
-    margin: 10px 0;
+    margin: 15px 0;
     background-color: var(--main-color);
     color: white;
     border-radius: 5px;
@@ -886,9 +897,53 @@ span.red-color{
     text-align: center;
     transition-duration: .3s;
 }
+
 .video-section .video-div video + p + button:hover{
     background-color: red;
     box-shadow: 0px 0px 2px 2px red ;
-    box-shadow: 0px 0px 2px 2px red ;
-} 
+}
+
 /* End Video Section  */
+/* Start About Section  */
+.about{
+    padding: 50px 0;
+}
+.about .img-box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.about .img-box img {
+    width: 75%;
+    border-radius: 15px;
+    max-height: 90vh;
+    transition-duration: .3s;
+    border: 3px solid gold;
+}
+@media (min-width:1000px) {
+    .about .img-box img {
+        width: 55%;
+        max-height: 85vh;
+    }
+}
+.about .img-box::before {
+    content: 'Future Car';
+    position: absolute;
+    bottom: 2%;
+    z-index: 100;
+    color: gold;
+    font-size: 4.5vw;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 2;
+    background-color: #ffffff5e;
+    padding: 0 .9vw;
+    border-radius: 14px;
+}
+
+.about .img-box img:hover{
+    scale: 1.01;
+    transform: translateY(-15px);
+    box-shadow: 0px 0px 20px 1px var(--main-color);
+}
+/* End About Section  */
