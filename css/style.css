@@ -1222,10 +1222,11 @@ span.red-color{
 .pricing .plans .plan {
     margin: 10px;
     text-align: center;
-    background-color: #f3f3fc;
+    background-color: #f0f1ff54;
     border-radius: 15px;
     border-bottom: 2px solid var(--main-color);
     transition-duration: .3s;
+    box-shadow: 0px 0px 11px 4px var(--secondary-color);
 }
 @media (max-width:455px) {
     .pricing .plans .plan {
@@ -1234,7 +1235,6 @@ span.red-color{
 }
 .pricing .plans .plan:hover{
     transform: translateY(-16px);
-    box-shadow: 0px 0px 11px 4px var(--secondary-color);
 }
 .pricing .plans .plan .head {
     padding: 40px 0 20px 0;
