@@ -27,7 +27,9 @@ html {
 body {
     font-family: MainFont;
 }
-
+button{
+    cursor: pointer;
+}
 * {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -54,7 +56,7 @@ ul {
     .container {
         width: calc(100% - 15px);
         margin: 0 auto;
-        padding: 0 15px;
+        padding: 0 30px;
     }
 }
 
@@ -63,7 +65,7 @@ ul {
     .container {
         width: calc(100% - 30px);
         margin: 0 auto;
-        padding: 0 15px;
+        padding: 0 50px;
     }
 }
 
@@ -83,7 +85,30 @@ header {
     font-size: 45px;
     transition-duration: .3s;
     margin: 25px;
+    /* transition-duration: .3s; */
 }
+.back-to-top i{
+    animation: click-to-up 1s infinite linear ;
+}
+
+@keyframes click-to-up {
+    0% {
+        transform: translateY(0px);
+        border-radius: 50%;
+    }
+    
+    65%{
+        transform: translateY(15px);
+        box-shadow: 0 0 10px 5px var(--main-color);
+        border-radius: 50%;
+    }
+    100% {
+        transform: translateY(0px);
+        border-radius: 50%;
+    }
+}
+
+
 .back-to-top:hover{
     color: red;
 }
@@ -243,6 +268,7 @@ header .container nav .form i:hover {
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-right: var(--main-color) 5px solid;
+    z-index: 3;
 }
 
 .landing .text .content {
@@ -312,10 +338,18 @@ header .container nav .form i:hover {
     z-index: 5;
     color: #ddd;
     transition-duration: .3s;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    padding-top: 6px;
+    text-align: center;
 }
+
 .landing .change-background:hover{
     color: red;
+    box-shadow: 0px 0px 10px red;
 }
+
 
 @media (max-width:767px) {
     .landing .change-background {
@@ -507,10 +541,13 @@ span.red-color{
     padding: 30px;
     border-radius: 18px;
     transition-duration: .5s;
+    box-shadow: 0px 0px 12px #ddd;
+    cursor: pointer;
 }
 
 .services-container .srv-box:hover {
     box-shadow: 0px 0px 7px 3px var(--main-color);
+    box-shadow: 0px 0px 7px 3px #ddd;
     transform: scale(1.05);
 }
 
@@ -568,11 +605,25 @@ span.red-color{
     width: 290px;
     position: relative;
 }
+@keyframes up-and-down {
+    0% {
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(70px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
 .design .image img{
     border-radius: 19px;
     width: 290px;
     transition-duration: .3s;
     opacity: .75;
+    box-shadow: 0px 0px 16px red;
+    cursor: pointer;
+
 }
 .design .image .caption {
     position: absolute;
@@ -637,14 +688,18 @@ span.red-color{
         font-size: 18px;
     }
 }
-
+@media (min-width:770px) {
+    .design .image .img{
+        animation: up-and-down 5s linear infinite;
+    }
+}
 .design .text {
     text-align: center;
     background-color: var(--transparent-main-color);
     height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 65%;
     border-top-left-radius: 20px;
@@ -725,6 +780,7 @@ span.red-color{
     transition-duration: .3s;
     background-color: var(--secondary-color);
     border-radius: 6px;
+    cursor: pointer;
 }
 @media (min-width:1300px) {
     .portfolio .filters-images .shuffle li{
@@ -805,8 +861,9 @@ span.red-color{
     opacity: .7;
 }
 .portfolio .container-images .box-of-img:hover {
-    transform: scale(1.09) ;
+    transform: scale(1.03) translateY(-15px) ;
     opacity: 1;
+    cursor: pointer;
 }
 .portfolio .container-images .box-of-img:hover img{
     opacity: 1;
@@ -897,6 +954,7 @@ span.red-color{
     padding: 5px 0;
     text-align: center;
     transition-duration: .3s;
+    cursor: pointer;
 }
 
 .video-section .video-div video + p + button:hover{
@@ -952,11 +1010,17 @@ span.red-color{
 .special-heading.heading-about {
     margin: 60px auto;
 }
+.heading-portfolio{
+    margin: 50px auto;
+}
 
 /* End About Section  */
 /* Start Skills Section  */
 .our-skills{
     padding: 65px 30px;
+}
+.heading-skills {
+    margin: 50px auto;
 }
 .our-skills .skills-box {
     display: flex;
@@ -980,6 +1044,7 @@ span.red-color{
     position: absolute;
     left: 50%;
     transform: translatex(-50%);
+    cursor: pointer;
     transition-duration: .3s;
     bottom: -40px;
 }
@@ -988,10 +1053,20 @@ span.red-color{
     background-color: red;
 }
 .our-skills button:hover ~ .progress-holder .progres span[progress-percent]{
+    animation: fill-box 4s linear 1;
     opacity: 1;
     transform: translateX(0%);
 }
-
+@keyframes fill-box{
+    0%{
+        opacity: 1;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
 .our-skills .skills-box .progress-holder{
     margin: 15px;
     padding: 0 10px 6px 0;
@@ -1092,10 +1167,14 @@ span.red-color{
     border-radius: 15px;
     transform: translateX(-100%);
 }
+.our-skills .skills-box .progress-holder:hover{
+    cursor: pointer;
+}
 .our-skills .skills-box .progress-holder:hover span{
     opacity: 1;
     transform: translateX(0%);
 }
+
 
 
 .our-skills .skills-box .progress-holder .progres span::before {
@@ -1207,6 +1286,8 @@ span.red-color{
     padding: 9px 8px;
     border-radius: 10px;
     transition-duration: .3s;
+    cursor: pointer;
+
 }
 .pricing .plans .plan button:hover{
     background-color: red;
@@ -1234,7 +1315,7 @@ span.red-color{
     color: var(--main-color);
     font-size: 22px;
 }
-.pricing .plans + p + button {
+.pricing .plans + p + a {
     text-align: center;
     margin: 15px auto;
     width: fit-content;
@@ -1251,11 +1332,225 @@ span.red-color{
     transition-duration: .8s;
     transition-property: scale color background-color;
     font-weight: bold;
+    animation: scale 3s linear infinite ;
+    cursor: pointer;
 }
 .pricing .plans + p + button:hover{
     background-color:red;
     color: white;
-    scale: 1.02;
+}
+@keyframes scale {
+    0%{
+        scale: 1;
+    }
+    50%{
+        scale: 1.1;
+    }
+    100%{
+        scale: 1;
+    }
+}
+/* End Pricing Section  */
+/* Start Subscribe Section  */
+.subscribe {
+    padding: 50px 0;
+    text-align: center;
+    margin-bottom: 75px;
+}
+.subscribe h3::first-letter{
+    color: red;
+    font-size: 29px;
+}
+.subscribe h3 {
+    letter-spacing: 2px;
+    width: fit-content;
+    font-weight: bold;
+    margin: 50px auto;
+    color: #19c8fab8;
+    font-size: 25px;
+    border-bottom: 5px solid #ddd;
+
+    border-color: var(--main-color);
+    padding: 18px 25px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 2px #ddd;
+}
+.subscribe form {
+    height: 130px;
+    border-radius: 10px;
+    transition-duration: .3s;
+    position: relative;
+}
+.subscribe form input[type="email"]{
+    height: 40px;
+    margin: 45px 0;
+    border: 2px solid white;
+    border-right: transparent;
+    background-color: #c8c8c745;
+    padding-left: 29px;
+    width: 50%;
+    transition: .3s;
 }
 
-/* End Pricing Section  */
+.subscribe form input[type="email"]::placeholder{
+    padding-left: 29px;
+}
+
+.subscribe form input[type="email"]:focus{
+    outline: none;
+    background-color: #c8c8c745;
+    caret-color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding-left: 29px;
+}
+.subscribe form input[type="email"]:focus ~ button{
+    border: 2px solid var(--main-color);
+
+}
+.subscribe form input[type="email"]:focus + i {
+    color: var(--main-color);
+}
+.subscribe form i {
+    position: relative;
+    left: -49.6%;
+    font-size: 17px;
+    transition-duration: .4s;
+}
+.subscribe form button{
+    color: white;
+    height: 40px;
+    border: 2px solid white;
+    border-left: transparent;
+    padding: 5px;
+    position: relative;
+    left: -30px;
+    top: -.5px;
+    background-color: var(--main-color);
+    transition-duration: .3s;
+}
+.subscribe form p {
+    width: 65%;
+    text-align: center;
+    margin: 25px auto;
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    text-transform: capitalize;
+    border-bottom: 4px solid;
+    border-radius: 45px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px #ddd;
+}
+@media (max-width:500px) {
+    .subscribe form input[type="email"] {
+        width: 50%;
+    }
+    .subscribe form i {
+        left: -48.8%;
+    }
+    .subscribe h3 {
+        font-size: 20px;
+        margin: 30px auto;
+        padding: 14px 25px;
+    }
+    .subscribe form p {
+        font-size: 12px;
+    }
+}
+/* End Subscribe Section */
+/* Start Contact Section */
+.contact{
+    padding: 100px 0;
+}
+.contact .heading-contact{
+    margin: 25px auto;
+    margin-bottom: 50px;
+}
+.contact .heading-contact h2{
+    word-spacing: -7px;
+}
+.contact .content{
+    display: flex;
+    justify-content: space-around;
+}
+@media (max-width:767px) {
+    .contact .content {
+        flex-direction: column;
+    }
+}
+.contact .content form{
+    flex-basis: 70%;
+    margin: 0 20px;
+}
+.contact .content form .input-form {
+    display: block;
+    padding-left: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 35px;
+    border:2px solid #ccc;
+    transition-duration: .3s;
+    caret-color: var(--main-color);
+}
+.contact .content form .input-form::before{
+    content: '';
+}
+
+.contact .content form .input-form:focus{
+    outline: none;
+    background-color: #f5f0f0ab;
+    border:2px solid var(--main-color);
+}
+.contact .content form input:nth-child(3){
+    height: 150px ;
+    padding-bottom: 100px;
+
+}
+.contact .content form input[type="button"] {
+    display: flex;
+    margin-left: auto;
+    color: white;
+    background-color: var(--main-color);
+    border: 2px solid white;
+    padding: 10px;
+    cursor: pointer;
+}
+.contact .information{
+    text-align: center;
+}
+@media (max-width:767px) {
+    .contact .information{
+        order: -1;
+        text-align: center;
+    }
+    .contact .information h4 {
+        width: 70%;
+    }
+}
+.contact .information h4 {
+    text-transform: uppercase;
+    padding: 10px 0;
+    box-shadow: 0 0 10px 2px #ddd;
+    border-bottom: 4px solid red;
+    border-radius: 20px;
+    margin: 0px auto;
+    margin-bottom: 15px;
+}
+.contact .information h4:last-of-type{
+    margin-top: 60px;
+
+}
+.contact .information p{
+    padding: 5px 0;
+    color: #777;
+}
+.contact .information address{
+    color: #777;
+    text-align: center;
+}
+@media (max-width:767px) {
+    .contact .information {
+        padding-bottom: 40px;
+    }
+}
+/* End Contact Section */
