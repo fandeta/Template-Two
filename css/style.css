@@ -1554,3 +1554,85 @@ span.red-color{
     }
 }
 /* End Contact Section */
+/* Start footer Section  */
+footer {
+    height: 110px;
+    width: 100%;
+    background-color: #0a0a0aeb;
+    border-radius: 15px;
+}
+footer div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+footer p {
+    text-align: center;
+    color: white;
+    height: 25px;
+    text-transform: capitalize;
+}
+footer p::first-letter{
+    font-size:22px;
+    color: var(--main-color);
+}
+footer .icons {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+footer .icons a {
+    display: block;
+    color: white;
+    font-size: 25px;
+    padding-bottom: 10px;
+    transition-duration: .3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+footer .icons a::before {
+    content: '';
+    background-color: var(--main-color);
+    color: var(--main-color);
+    width: 150%;
+    height: 2px;
+    position: absolute;
+    bottom: 6px;
+    left: -300%;
+    transition-duration: .8s;
+}
+footer .icons a:hover::before {
+    left: 0;
+}
+footer .icons a:hover {
+    transform: translateY(-10px);
+    scale: 1.05;
+    color: var(--main-color);
+}
+
+footer .icons a:not(:last-child){
+    margin-right: 20px;
+}
+@media (max-width:450px) {
+    footer{
+        border-radius: 10px;
+    }
+    footer p {
+        font-size: 14px;
+    }
+    footer .icons a {
+        font-size: 20px;
+    }
+    footer .span {
+        font-size: 16px;
+    }
+}
+/* End footer Section  */
+
+/* Now i can say : good bye to template two  */
+/* Bye bye ....  */
