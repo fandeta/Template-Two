@@ -411,6 +411,10 @@ header .container nav .form i:hover {
 .special-heading.heading-portfolio {
     margin-bottom: 60px;
 }
+.special-heading.heading-portfolio img {
+    width: 40%;
+    /* margin-top: 55px; */
+}
 
 .special-heading h2 {
     margin-bottom: 70px;
@@ -523,6 +527,7 @@ span.red-color{
     font-weight: bolder;
     font-size: 18px;
 }
+
 /* Ending of First Component  */
 
 
@@ -533,7 +538,10 @@ span.red-color{
     margin-bottom: 50px;
     justify-content: center;
 }
-
+.heading-services img {
+    width: 40%;
+    margin-top: 40px;
+}
 .services-container .srv-box {
     margin: 10px;
     text-align: center;
@@ -595,6 +603,12 @@ span.red-color{
     align-items: center;
     justify-content: center;
 }
+h2 + .svg-img {
+    width: 40%;
+    margin: 50px auto 1px;
+    display: block;
+    border-radius: 15px;
+}
 .design .image {
     width: 500px;
     margin: 20px 50px;
@@ -621,7 +635,7 @@ span.red-color{
     width: 290px;
     transition-duration: .3s;
     opacity: .75;
-    box-shadow: 0px 0px 16px red;
+    box-shadow: 0px 0px 6px red;
     cursor: pointer;
 
 }
@@ -1010,6 +1024,10 @@ span.red-color{
 .special-heading.heading-about {
     margin: 60px auto;
 }
+.special-heading.heading-about img {
+    width: 40%;
+    margin-top: 50px;
+}
 .heading-portfolio{
     margin: 50px auto;
 }
@@ -1021,6 +1039,10 @@ span.red-color{
 }
 .heading-skills {
     margin: 50px auto;
+}
+.heading-skills img{
+    width: 40%;
+    margin-top: 55px;
 }
 .our-skills .skills-box {
     display: flex;
@@ -1207,6 +1229,10 @@ span.red-color{
 .pricing .special-heading.heading-pricing{
     margin: 70px 0;
 }
+.pricing .special-heading.heading-pricing img{
+    width: 40%;
+    margin-top: 45px;
+}
 .pricing .plans {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -1223,10 +1249,11 @@ span.red-color{
     margin: 10px;
     text-align: center;
     background-color: #f0f1ff54;
+    background-color: #fff;
     border-radius: 15px;
     border-bottom: 2px solid var(--main-color);
     transition-duration: .3s;
-    box-shadow: 0px 0px 11px 4px var(--secondary-color);
+    box-shadow: 0px 0px 10px 4px var(--secondary-color);
 }
 @media (max-width:455px) {
     .pricing .plans .plan {
@@ -1359,21 +1386,25 @@ span.red-color{
 }
 .subscribe h3::first-letter{
     color: red;
-    font-size: 29px;
+    font-weight: bold;
+    font-size: 27px;
 }
 .subscribe h3 {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     width: fit-content;
-    font-weight: bold;
+    font-weight: bolder;
     margin: 50px auto;
     color: #19c8fab8;
     font-size: 25px;
     border-bottom: 5px solid #ddd;
-
     border-color: var(--main-color);
     padding: 18px 25px;
     border-radius: 20px;
     box-shadow: 0px 0px 10px 2px #ddd;
+}
+.subscribe img{
+    width: 40%;
+    
 }
 .subscribe form {
     height: 130px;
@@ -1465,6 +1496,10 @@ span.red-color{
 .contact .heading-contact{
     margin: 25px auto;
     margin-bottom: 50px;
+}
+.contact .heading-contact img{
+    width: 40%;
+    margin: 50px 0 20px 0;
 }
 .contact .heading-contact h2{
     word-spacing: -7px;
@@ -1632,6 +1667,13 @@ footer .icons a:not(:last-child){
         font-size: 16px;
     }
 }
+/* Settings of Svg Image */
+@media (max-width:450px) {
+    .svg-img {
+        width: 60% !important;
+    }
+}
+
 /* End footer Section  */
 
 /* Now i can say : good bye to template two  */
